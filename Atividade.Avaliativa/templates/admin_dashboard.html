@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard Administrador</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <main class="container">
+        <h1>Dashboard Administrador</h1>
+
+        <h2>Usuários cadastrados</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Email</th>
+                    <th>CPF</th>
+                    <th>Status</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for usuario in usuarios %}
+                <tr>
+                    <td>{{ usuario.id }}</td>
+                    <td>{{ usuario.nome }}</td>
+                    <td>{{ usuario.email }}</td>
+                    <td>{{ usuario.cpf }}</td>
+                    <td>{{ usuario.status if usuario.status else "Aguardando" }}</td>
+                    <td>
+                        <form method="POST" action="{{ url_for('alterar_status', usuario_id=usuario.id) }}">
+                            <button type="submit" name="status" value="Aguardando">Aguardando</button>
+                            <button type="submit" name="status" value="Em atendimento">Em atendimento</button>
+                            <button type="submit" name="status" value="Finalizado">Finalizado</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <a href="{{ url_for('admin_login') }}">Voltar ao Login Admin</a>
+
+    </main>
+</body>
+</html>

@@ -1,0 +1,91 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fundo */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(to bottom, #dbeafe, #eff6ff);
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Container */
+.container {
+    background-color: #f5f5f5;
+    padding: 40px;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Título */
+.container h1 {
+    text-align: center;
+    color: #3b6db3;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+/* Subtítulo */
+.container h2 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: #666;
+    font-weight: normal;
+}
+
+/* Botão */
+.btn-fila {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(to right, #2b6db3, #4a7fd6);
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+.btn-fila:hover {
+    transform: scale(1.03);
+    opacity: 0.9;
+}
+
+.btn-fila:active {
+    transform: scale(0.97);
+}
+
+/* Status geral */
+.status {
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* Aguardando */
+.aguardando {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+/* Em atendimento */
+.atendimento {
+    background-color: #d1ecf1;
+    color: #0c5460;
+}
+
+/* Realizado */
+.realizado {
+    background-color: #d4edda;
+    color: #155724;
+}

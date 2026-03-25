@@ -1,0 +1,126 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+ body{
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(to bottom, #dbeafe, #eff6ff);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.container{
+    background-color: #f5f5f5;
+    padding: 40px;
+    width: 100%;
+    max-width: 700px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+
+.container h1{
+    text-align: center;
+    color: #3b6db3;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+
+th{
+    text-align: left;
+    padding: 12px;
+    background-color: #e9edf3;
+    color: #333;
+}
+
+
+td{
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+}
+
+
+.status{
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+
+.aguardando{
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+
+.atendimento{
+    background-color: #d1ecf1;
+    color: #0c5460;
+}
+
+
+.realizado{
+    background-color: #d4edda;
+    color: #155724;
+}
+
+
+.button{
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+    padding: 8px 12px;
+    color: white;
+}
+
+
+.btn-atender{
+    background: linear-gradient(to right, #4a7fd6, #2b6db3);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+
+.btn-atender-hover{
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+
+.btn-finalizar{
+    background: linear-gradient(to right, #5cb85c, #4cae4c);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+
+.btn-finalizar:hover{
+    transform: scale(1.05);
+    opacity: 0.9;
+}
