@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Fila</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script>
+        async function atualizarStatus() {
+            try {
+                const response = await fetch("{{ url_for('fila', usuario_id=usuario.id) }}?json=1");
+                const data = await response.json();
+                document.getElementById("status").innerText = data.status;
+            } catch (error) {
+                console.error("Erro ao atualizar status:", error);
+            }
+        }
+        // Atualiza a cada 1 segundos
+        setInterval(atualizarStatus, 1000);
+    </script>
+</head>
+<body>
+    <main class="container">
+    <h1>Fila de Atendimento</h1>
+    <p>Seu status atual é:</p>
+    <div id="status" class="status">{{ usuario.status }}</div>
+    <a href="{{ url_for('dashboard', usuario_id=usuario.id) }}">Voltar ao Dashboard</a>
+    </main>
+</body>
+</html>

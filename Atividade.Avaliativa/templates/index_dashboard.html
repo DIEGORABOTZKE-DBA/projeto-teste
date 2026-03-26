@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script>
+        async function atualizarStatus() {
+            try {
+                const response = await fetch("{{ url_for('status', usuario_id=usuario.id) }}");
+                const data = await response.json();
+                document.getElementById("status").innerText = data.status;
+            } catch (error) {
+                console.error("Erro ao atualizar status:", error);
+            }
+        }
+        // Atualiza a cada 1 segundo
+        setInterval(atualizarStatus, 1000);
+    </script>
+</head>
+<body>
+<main class="container">
+    <h1>Dashboard</h1>
+    <form method="POST" action="{{ url_for('entrar_fila', usuario_id=usuario.id) }}">
+        <button type="submit" class="btn-fila">Entrar na fila</button>
+    </form>
+    <h2>Status atual:</h2>
+    <div id="status" class="status">{{ usuario.status }}</div>
+</main>
+</body>
+</html>
