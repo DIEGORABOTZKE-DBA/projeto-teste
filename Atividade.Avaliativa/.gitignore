@@ -1,0 +1,9 @@
+# Ignorar banco de dados SQLite
+dados.db
+*.sqlite3
+*.db
+
+# Ignorar arquivos temporários
+__pycache__/
+*.pyc
+*.pyo
